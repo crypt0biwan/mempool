@@ -1,0 +1,36 @@
+{
+  "theme": "shai",
+  "enterprise": "shai",
+  "branding": {
+    "name": "shai",
+    "title": "ShaiCoin",
+    "site_id": 19,
+    "header_img": "/resources/shai-logo.svg",
+    "footer_img": "/resources/shai-logo.svg",
+    "rounded_corner": true
+  },
+  "dashboard": {
+    "widgets": [
+      {
+        "component": "difficulty",
+        "mobileOrder": 2,
+        "halving": false
+      },
+      {
+        "component": "fees",
+        "mobileOrder": 4
+      },
+      {
+        "component": "blocks",
+        "mobileOrder": 1,
+      },
+      {
+        "component": "twitter",
+        "mobileOrder": 3,
+        "props": {
+          "handle": "shai_pow"
+        }
+      }
+    ]
+  }
+}

@@ -32,7 +32,7 @@ export class DifficultyMiningComponent implements OnInit {
   timeUntilHalving = 0;
   now = new Date().getTime();
 
-  @Input() showProgress = true;
+  @Input() showProgress = false;
   @Input() showHalving = false;
   @Input() showTitle = true;
 
