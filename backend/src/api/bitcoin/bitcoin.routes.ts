@@ -624,7 +624,7 @@ class BitcoinRoutes {
   private async getSupply(req: Request, res: Response) {
     const total_supply = await supply.getSupply();
     res.json({
-      supply: total_supply
+      supply: parseFloat(total_supply)
     });
   }
 

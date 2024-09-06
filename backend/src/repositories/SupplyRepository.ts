@@ -5,7 +5,7 @@ class SupplyRepository {
   /**
    * Return most recent block height
    */
-  public async $getSupply(): Promise<number> {
+  public async $getSupply(): Promise<string> {
     try {
       const [row] = await DB.query('SELECT SUM(reward) / 100000000 AS supply FROM blocks');
       return row[0]['supply'];
