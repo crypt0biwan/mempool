@@ -15,6 +15,7 @@ import loadingIndicators from '../loading-indicators';
 import { TransactionExtended } from '../../mempool.interfaces';
 import logger from '../../logger';
 import blocks from '../blocks';
+import supply from '../supply';
 import bitcoinClient from './bitcoin-client';
 import difficultyAdjustment from '../difficulty-adjustment';
 import transactionRepository from '../../repositories/TransactionRepository';
@@ -24,6 +25,7 @@ import { calculateMempoolTxCpfp } from '../cpfp';
 class BitcoinRoutes {
   public initRoutes(app: Application) {
     app
+      .get(config.MEMPOOL.API_URL_PREFIX + 'supply', this.getSupply)
       .get(config.MEMPOOL.API_URL_PREFIX + 'transaction-times', this.getTransactionTimes)
       .get(config.MEMPOOL.API_URL_PREFIX + 'cpfp/:txId', this.$getCpfpInfo)
       .get(config.MEMPOOL.API_URL_PREFIX + 'difficulty-adjustment', this.getDifficultyChange)
@@ -616,6 +618,13 @@ class BitcoinRoutes {
       vsize: info.bytes,
       total_fee: info.total_fee * 1e8,
       fee_histogram: []
+    });
+  }
+
+  private async getSupply(req: Request, res: Response) {
+    const total_supply = await supply.getSupply();
+    res.json({
+      supply: total_supply
     });
   }
 
