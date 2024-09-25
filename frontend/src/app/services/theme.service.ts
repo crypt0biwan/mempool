@@ -18,13 +18,14 @@ export class ThemeService {
     private stateService: StateService,
   ) {
     const theme = this.stateService.env.customize?.theme || this.storageService.getValue('theme-preference') || 'default';
+
     this.apply(theme);
   }
 
   apply(theme) {
     this.theme = theme;
     if (theme !== 'default') {
-      theme === 'contrast'  || theme === 'bukele' ? this.mempoolFeeColors = contrastMempoolFeeColors : this.mempoolFeeColors = defaultMempoolFeeColors;
+      ['contrast', 'bukele', 'shai'].indexOf(theme) > -1 ? this.mempoolFeeColors = contrastMempoolFeeColors : this.mempoolFeeColors = defaultMempoolFeeColors;
       try {
         if (!this.style) {
           this.style = document.createElement('link');

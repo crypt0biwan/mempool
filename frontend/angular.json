@@ -190,6 +190,11 @@
                 "bundleName": "bukele",
                 "inject": false
               },
+              {
+                "input": "src/theme-shai.scss",
+                "bundleName": "shai",
+                "inject": false
+              },
               "node_modules/@fortawesome/fontawesome-svg-core/styles.css"
             ],
             "vendorChunk": true,

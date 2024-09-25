@@ -22,14 +22,7 @@
       },
       {
         "component": "blocks",
-        "mobileOrder": 1,
-      },
-      {
-        "component": "twitter",
-        "mobileOrder": 3,
-        "props": {
-          "handle": "shai_pow"
-        }
+        "mobileOrder": 1
       }
     ]
   }

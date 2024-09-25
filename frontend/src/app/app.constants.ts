@@ -40,7 +40,7 @@ export const defaultMempoolFeeColors = [
 ];
 
 export const contrastMempoolFeeColors = [
-  '0082e6',
+  '662E9B', // 0082e6
   '0984df',
   '1285d9',
   '1a87d2',
