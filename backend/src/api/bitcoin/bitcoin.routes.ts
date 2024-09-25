@@ -623,9 +623,7 @@ class BitcoinRoutes {
 
   private async getSupply(req: Request, res: Response) {
     const total_supply = await supply.getSupply();
-    res.json({
-      supply: parseFloat(total_supply)
-    });
+    res.json(parseFloat(total_supply));
   }
 
   private async getMempoolTxIds(req: Request, res: Response) {
